@@ -1,22 +1,22 @@
-package com.ceiba.servicioEstetico.builder;
+package com.ceiba.servicioestetico.builder;
 
-import com.ceiba.servicioEstetico.modelo.entidad.ServicioEstetico;
+import com.ceiba.servicioestetico.modelo.entidad.ServicioEstetico;
 
 public class ServicioEsteticoTestBuilder {
     private Long id;
-    private String IS;
+    private String idServicio;
     private String nombre;
-    private String tipo;
+    private String tipoServicio;
     private int costo;
-    private boolean estado;
+    private boolean estadoServicio;
 
     public ServicioEsteticoTestBuilder(){
         this.id = 1L;
-        this.IS = "CA22";
+        this.idServicio = "CA22";
         this.nombre = "cejas";
-        this.tipo = "Depilacion";
+        this.tipoServicio = "Depilacion";
         this.costo = 7000;
-        this.estado = true;
+        this.estadoServicio = true;
     }
 
     public ServicioEsteticoTestBuilder setId(Long id) {
@@ -24,8 +24,8 @@ public class ServicioEsteticoTestBuilder {
         return this;
     }
 
-    public ServicioEsteticoTestBuilder setIS(String IS){
-        this.IS = IS;
+    public ServicioEsteticoTestBuilder setIdServicio(String idServicio){
+        this.idServicio = idServicio;
         return this;
     }
 
@@ -34,8 +34,8 @@ public class ServicioEsteticoTestBuilder {
         return this;
     }
 
-    public ServicioEsteticoTestBuilder setTipo(String tipo) {
-        this.tipo = tipo;
+    public ServicioEsteticoTestBuilder setTipoServicio(String tipoServicio) {
+        this.tipoServicio = tipoServicio;
         return this;
     }
 
@@ -44,12 +44,12 @@ public class ServicioEsteticoTestBuilder {
         return this;
     }
 
-    public ServicioEsteticoTestBuilder setEstado(boolean estado) {
-        this.estado = estado;
+    public ServicioEsteticoTestBuilder setEstadoServicio(boolean estadoServicio) {
+        this.estadoServicio = estadoServicio;
         return this;
     }
 
     public ServicioEstetico build(){
-        return new ServicioEstetico(id, IS, nombre, tipo, costo, estado);
+        return new ServicioEstetico(id, idServicio, nombre, tipoServicio, costo, estadoServicio);
     }
 }

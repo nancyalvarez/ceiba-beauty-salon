@@ -1,8 +1,8 @@
-package com.ceiba.servicioEstetico.servicio;
+package com.ceiba.servicioestetico.servicio;
 
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
-import com.ceiba.servicioEstetico.modelo.entidad.ServicioEstetico;
-import com.ceiba.servicioEstetico.puerto.repositorio.RepositorioServicioEstetico;
+import com.ceiba.servicioestetico.modelo.entidad.ServicioEstetico;
+import com.ceiba.servicioestetico.puerto.repositorio.RepositorioServicioEstetico;
 
 public class ServicioCrearServicioEstetico {
 

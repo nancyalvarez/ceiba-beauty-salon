@@ -1,7 +1,7 @@
-package com.ceiba.servicioEstetico.comando.fabrica;
+package com.ceiba.servicioestetico.comando.fabrica;
 
-import com.ceiba.servicioEstetico.comando.ComandoServicioEstetico;
-import com.ceiba.servicioEstetico.modelo.entidad.ServicioEstetico;
+import com.ceiba.servicioestetico.comando.ComandoServicioEstetico;
+import com.ceiba.servicioestetico.modelo.entidad.ServicioEstetico;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,11 +10,11 @@ public class FabricaServicioEstetico {
     public ServicioEstetico crear(ComandoServicioEstetico comandoServicioEstetico){
         return new ServicioEstetico(
                 comandoServicioEstetico.getId(),
-                comandoServicioEstetico.getId_servicio(),
+                comandoServicioEstetico.getIdServicio(),
                 comandoServicioEstetico.getNombre(),
-                comandoServicioEstetico.getTipoServicioEstetico(),
+                comandoServicioEstetico.getTipoServicio(),
                 comandoServicioEstetico.getCosto(),
-                comandoServicioEstetico.isEstadoServicioEstetico()
+                comandoServicioEstetico.isEstadoServicio()
         );
 
     }

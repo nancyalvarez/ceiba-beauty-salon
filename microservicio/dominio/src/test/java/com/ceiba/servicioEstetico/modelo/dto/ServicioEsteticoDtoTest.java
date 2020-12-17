@@ -1,4 +1,4 @@
-package com.ceiba.servicioEstetico.modelo.dto;
+package com.ceiba.servicioestetico.modelo.dto;
 
 import org.junit.Test;
 
@@ -11,17 +11,17 @@ public class ServicioEsteticoDtoTest {
     public void validarISServicioEsteticoRequerido(){
         //Arrange
         long id = 1L;
-        String IS = "CC03";
+        String idServicio = "CC03";
         String nombre = "grafilado";
-        String tipo = "Corte";
+        String tipoServicio = "Corte";
         int costo = 15000;
-        boolean estado = true;
+        boolean estadoServicio = true;
         //Act
-        DtoServicioEstetico servicioEstetico = new DtoServicioEstetico(id, IS, nombre, tipo, costo, estado);
+        DtoServicioestetico servicioEstetico = new DtoServicioestetico(id, idServicio, nombre, tipoServicio, costo, estadoServicio);
         //Assert
-        boolean esValido = id == servicioEstetico.getId()&&IS.equals(servicioEstetico.getIS())
-                &&nombre.equals(servicioEstetico.getNombre())&&tipo.equals(servicioEstetico.getTipo())
-                &&costo == servicioEstetico.getCosto()&&estado==servicioEstetico.isEstado();
+        boolean esValido = id == servicioEstetico.getId()&&idServicio.equals(servicioEstetico.getIdServicio())
+                &&nombre.equals(servicioEstetico.getNombre())&&tipoServicio.equals(servicioEstetico.getTipoServicio())
+                &&costo == servicioEstetico.getCosto()&&estadoServicio==servicioEstetico.isEstadoServicio();
         assertTrue(esValido);
 
     }

@@ -1,8 +1,8 @@
-package com.ceiba.servicioEstetico.controlador;
+package com.ceiba.servicioestetico.controlador;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.servicioEstetico.comando.ComandoServicioEstetico;
-import com.ceiba.servicioEstetico.comando.manejador.ManejadorCrearServicioEstetico;
+import com.ceiba.servicioestetico.comando.ComandoServicioEstetico;
+import com.ceiba.servicioestetico.comando.manejador.ManejadorCrearServicioEstetico;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

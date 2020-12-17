@@ -1,10 +1,10 @@
-package com.ceiba.servicioEstetico.modelo.entidad;
+package com.ceiba.servicioestetico.modelo.entidad;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import static com.ceiba.dominio.ValidadorArgumento.*;
-import com.ceiba.servicioEstetico.constant.TipoServicio;
+import com.ceiba.servicioestetico.constant.TipoServicio;
 
 @Getter
 @Setter
@@ -19,23 +19,23 @@ public class ServicioEstetico {
     private Long id;
     private String idServicio;
     private String nombre;
-    private String tipoServicioEstetico;
+    private String tipoServicio;
     private int costo;
-    private boolean estadoServicioEstetico;
+    private boolean estadoServicio;
 
-    public ServicioEstetico(Long id, String idServicio, String nombre, String tipo, int costo, boolean estado) {
+    public ServicioEstetico(Long id, String idServicio, String nombre, String tipoServicio, int costo, boolean estadoServicio) {
         validarObligatorio(idServicio, ID_SERVICIO_ESTETICO_REQUERIDO);
         validarObligatorio(nombre, NOMBRE_SERVICIO_ESTETICO_REQUERIDO);
-        validarObligatorio(tipo, TIPO_SERVICIO_ESTETICO_REQUERIDO);
-        validarValido(tipo, TipoServicio.class, TIPO_SERVICIO_ESTETICO_INVALIDO);
+        validarObligatorio(tipoServicio, TIPO_SERVICIO_ESTETICO_REQUERIDO);
+        validarValido(tipoServicio, TipoServicio.class, TIPO_SERVICIO_ESTETICO_INVALIDO);
         validarObligatorio(costo, COSTO_SERVICIO_ESTETICO_REQUERIDO);
 
         this.id = id;
         this.idServicio = idServicio;
         this.nombre = nombre;
-        this.tipoServicioEstetico = tipo;
+        this.tipoServicio = tipoServicio;
         this.costo = costo;
-        this.estadoServicioEstetico = estado;
+        this.estadoServicio = estadoServicio;
 
     }
 }

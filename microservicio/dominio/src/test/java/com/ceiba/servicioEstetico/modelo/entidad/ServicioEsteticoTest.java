@@ -1,13 +1,13 @@
-package com.ceiba.servicioEstetico.modelo.entidad;
+package com.ceiba.servicioestetico.modelo.entidad;
 
 import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
-import com.ceiba.servicioEstetico.builder.ServicioEsteticoTestBuilder;
+import com.ceiba.servicioestetico.builder.ServicioEsteticoTestBuilder;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertTrue;
 
 public class ServicioEsteticoTest {
 
@@ -27,7 +27,7 @@ public class ServicioEsteticoTest {
     @Test
     public void validarIdServicioEsteticoRequerido(){
         //Arrange
-        servicioEsteticoBuilder.setIS(null);
+        servicioEsteticoBuilder.setIdServicio(null);
         //Act - Assert
         BasePrueba.assertThrows(servicioEsteticoBuilder::build, ExcepcionValorObligatorio.class, ID_SERVICIO_ESTETICO_REQUERIDO);
     }
@@ -43,7 +43,7 @@ public class ServicioEsteticoTest {
     @Test
     public void validarTipoServicioEsteticoRequerido(){
         //Arrange
-        servicioEsteticoBuilder.setTipo(null);
+        servicioEsteticoBuilder.setTipoServicio(null);
         //Act - Assert
         BasePrueba.assertThrows(servicioEsteticoBuilder::build, ExcepcionValorObligatorio.class, TIPO_SERVICIO_ESTETICO_REQUERIDO);
     }
@@ -51,7 +51,7 @@ public class ServicioEsteticoTest {
     @Test
     public void validarTipoServicioEsteticoNoHabilitado(){
         //Arrange
-        servicioEsteticoBuilder.setTipo("NO_EXISTE");
+        servicioEsteticoBuilder.setTipoServicio("NO_EXISTE");
         //Act - Assert
         BasePrueba.assertThrows(servicioEsteticoBuilder::build, ExcepcionValorInvalido.class, TIPO_SERVICIO_ESTETICO_INVALIDO);
     }
@@ -61,25 +61,25 @@ public class ServicioEsteticoTest {
 
         //Arrange
         long id = 1L;
-        String id_servicio = "TR03";
+        String idServicio = "TR03";
         String nombre = "semipermanente";
-        String tipo = "Tinte";
+        String tipoServicio = "Tinte";
         int costo = 120000;
-        boolean estado = true;
+        boolean estadoServicio = true;
 
-        servicioEsteticoBuilder.setIS(id_servicio)
+        servicioEsteticoBuilder.setIdServicio(idServicio)
                 .setNombre(nombre)
-                .setTipo(tipo)
+                .setTipoServicio(tipoServicio)
                 .setCosto(costo)
-                .setEstado(estado);
+                .setEstadoServicio(estadoServicio);
 
         //Act
         ServicioEstetico servicioEstetico = servicioEsteticoBuilder.build();
         //Assert
-        boolean esValido= id_servicio.equals(servicioEstetico.getIdServicio()) && nombre.equals(servicioEstetico.getNombre())
-                && tipo.equals(servicioEstetico.getTipoServicioEstetico()) && costo==servicioEstetico.getCosto()
-                && estado == servicioEstetico.isEstadoServicioEstetico();
-
+        boolean esValido= id==servicioEstetico.getId() && idServicio.equals(servicioEstetico.getIdServicio()) && nombre.equals(servicioEstetico.getNombre())
+                && tipoServicio.equals(servicioEstetico.getTipoServicio()) && costo==servicioEstetico.getCosto()
+                && estadoServicio == servicioEstetico.isEstadoServicio();
+        assertTrue(esValido);
 
     }
 

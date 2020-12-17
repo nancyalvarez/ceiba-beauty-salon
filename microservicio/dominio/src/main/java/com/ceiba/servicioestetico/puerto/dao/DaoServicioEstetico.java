@@ -1,6 +1,6 @@
-package com.ceiba.servicioEstetico.puerto.dao;
+package com.ceiba.servicioestetico.puerto.dao;
 
-import com.ceiba.servicioEstetico.modelo.dto.DtoServicioEstetico;
+import com.ceiba.servicioestetico.modelo.dto.DtoServicioestetico;
 
 import java.util.List;
 
@@ -10,5 +10,5 @@ public interface DaoServicioEstetico {
      * Permite listar los servicios esteticos
      * @return los servicios esteticos
      */
-    List<DtoServicioEstetico> listar();
+    List<DtoServicioestetico> listar();
 }

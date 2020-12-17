@@ -1,7 +1,7 @@
-package com.ceiba.servicioEstetico.controlador;
+package com.ceiba.servicioestetico.controlador;
 
-import com.ceiba.servicioEstetico.consulta.ManejadorListarServicioEstetico;
-import com.ceiba.servicioEstetico.modelo.dto.DtoServicioEstetico;
+import com.ceiba.servicioestetico.consulta.ManejadorListarServicioEstetico;
+import com.ceiba.servicioestetico.modelo.dto.DtoServicioestetico;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +24,7 @@ public class ConsultaControladorServicioEstetico {
 
     @GetMapping
     @ApiOperation("Listar servicios esteticos")
-    public List<DtoServicioEstetico> listar(){
+    public List<DtoServicioestetico> listar(){
         return this.manejadorListarServicioEstetico.ejecutar();
     }
 }

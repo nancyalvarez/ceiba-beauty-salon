@@ -1,9 +1,9 @@
-package com.ceiba.servicioEstetico.controlador;
+package com.ceiba.servicioestetico.controlador;
 
 import com.ceiba.ApplicationMock;
-import com.ceiba.servicioEstetico.builder.ComandoServicioEsteticoTestBuilder;
-import com.ceiba.servicioEstetico.builder.ObjetoRespuestaCreacion;
-import com.ceiba.servicioEstetico.comando.ComandoServicioEstetico;
+import com.ceiba.servicioestetico.builder.ComandoServicioEsteticoTestBuilder;
+import com.ceiba.servicioestetico.builder.ObjetoRespuestaCreacion;
+import com.ceiba.servicioestetico.comando.ComandoServicioEstetico;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
 import org.junit.Test;
@@ -40,7 +40,7 @@ public class ComandoControladorServicioEsteticoTest {
                 .setNombre("Rayos")
                 .setTipoServicioEstetico("Tinte")
                 .setCosto(150000)
-                .setEstadoServicioEstetico(true)
+                .setEstadoServicio(true)
                 .build();
 
         //Act

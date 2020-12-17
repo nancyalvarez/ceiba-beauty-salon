@@ -1,9 +1,9 @@
-package com.ceiba.servicioEstetico.adaptador.dao;
+package com.ceiba.servicioestetico.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.servicioEstetico.adaptador.mapper.MapeoServicioEstetico;
-import com.ceiba.servicioEstetico.modelo.dto.DtoServicioEstetico;
-import com.ceiba.servicioEstetico.puerto.dao.DaoServicioEstetico;
+import com.ceiba.servicioestetico.adaptador.mapper.MapeoServicioEstetico;
+import com.ceiba.servicioestetico.modelo.dto.DtoServicioestetico;
+import com.ceiba.servicioestetico.puerto.dao.DaoServicioEstetico;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +22,7 @@ public class DaoServicioEsteticoEnMemoria implements DaoServicioEstetico {
     }
 
     @Override
-    public List<DtoServicioEstetico> listar() {
+    public List<DtoServicioestetico> listar() {
         return this.customerNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoServicioEstetico());
     }
 }

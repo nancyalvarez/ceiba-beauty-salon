@@ -1,6 +1,6 @@
-package com.ceiba.servicioEstetico.puerto.repositorio;
+package com.ceiba.servicioestetico.puerto.repositorio;
 
-import com.ceiba.servicioEstetico.modelo.entidad.ServicioEstetico;
+import com.ceiba.servicioestetico.modelo.entidad.ServicioEstetico;
 
 public interface RepositorioServicioEstetico {
 
@@ -13,10 +13,10 @@ public interface RepositorioServicioEstetico {
 
     /**
      * Permite validar si existe un servicio estetico con el mismo IS
-     * @param IS identificar del servicio estetico en el salon de belleza
+     * @param idServicio identificar del servicio estetico en el salon de belleza
      * @return si existe o no
      */
-    boolean existe(String IS);
+    boolean existe(String idServicio);
 
 
 

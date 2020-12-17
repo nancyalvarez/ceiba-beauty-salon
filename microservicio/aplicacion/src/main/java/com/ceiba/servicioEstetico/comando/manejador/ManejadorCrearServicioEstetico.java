@@ -1,11 +1,11 @@
-package com.ceiba.servicioEstetico.comando.manejador;
+package com.ceiba.servicioestetico.comando.manejador;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
-import com.ceiba.servicioEstetico.comando.ComandoServicioEstetico;
-import com.ceiba.servicioEstetico.comando.fabrica.FabricaServicioEstetico;
-import com.ceiba.servicioEstetico.modelo.entidad.ServicioEstetico;
-import com.ceiba.servicioEstetico.servicio.ServicioCrearServicioEstetico;
+import com.ceiba.servicioestetico.comando.ComandoServicioEstetico;
+import com.ceiba.servicioestetico.comando.fabrica.FabricaServicioEstetico;
+import com.ceiba.servicioestetico.modelo.entidad.ServicioEstetico;
+import com.ceiba.servicioestetico.servicio.ServicioCrearServicioEstetico;
 import org.springframework.stereotype.Component;
 
 @Component

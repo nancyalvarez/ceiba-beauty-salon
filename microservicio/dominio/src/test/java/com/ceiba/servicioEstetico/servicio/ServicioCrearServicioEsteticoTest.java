@@ -1,10 +1,8 @@
-package com.ceiba.servicioEstetico.servicio;
+package com.ceiba.servicioestetico.servicio;
 
-import com.ceiba.BasePrueba;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
-import com.ceiba.servicioEstetico.builder.ServicioEsteticoTestBuilder;
-import com.ceiba.servicioEstetico.modelo.entidad.ServicioEstetico;
-import com.ceiba.servicioEstetico.puerto.repositorio.RepositorioServicioEstetico;
+import com.ceiba.servicioestetico.builder.ServicioEsteticoTestBuilder;
+import com.ceiba.servicioestetico.modelo.entidad.ServicioEstetico;
+import com.ceiba.servicioestetico.puerto.repositorio.RepositorioServicioEstetico;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,11 +29,11 @@ public class ServicioCrearServicioEsteticoTest {
     public void validarCreacionServicioEstetico(){
         //Arrange
         ServicioEstetico servicioEstetico = new ServicioEsteticoTestBuilder()
-                .setIS("DP33")
+                .setIdServicio("DP33")
                 .setNombre("piernas")
-                .setTipo("Depilacion")
+                .setTipoServicio("Depilacion")
                 .setCosto(12000)
-                .setEstado(true)
+                .setEstadoServicio(true)
                 .build();
         when(repositorioServicioEstetico.existe(anyString())).thenReturn(false);
         when(repositorioServicioEstetico.crear(servicioEstetico)).thenReturn(2L);

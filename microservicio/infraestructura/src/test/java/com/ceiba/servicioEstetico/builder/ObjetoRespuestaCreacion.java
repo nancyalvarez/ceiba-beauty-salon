@@ -1,4 +1,4 @@
-package com.ceiba.servicioEstetico.builder;
+package com.ceiba.servicioestetico.builder;
 
 import com.ceiba.ComandoRespuesta;
 

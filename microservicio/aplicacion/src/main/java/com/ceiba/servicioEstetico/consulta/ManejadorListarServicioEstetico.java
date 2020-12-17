@@ -1,7 +1,7 @@
-package com.ceiba.servicioEstetico.consulta;
+package com.ceiba.servicioestetico.consulta;
 
-import com.ceiba.servicioEstetico.modelo.dto.DtoServicioEstetico;
-import com.ceiba.servicioEstetico.puerto.dao.DaoServicioEstetico;
+import com.ceiba.servicioestetico.modelo.dto.DtoServicioestetico;
+import com.ceiba.servicioestetico.puerto.dao.DaoServicioEstetico;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public class ManejadorListarServicioEstetico {
         this.daoServicioEstetico = daoServicioEstetico;
     }
 
-    public List<DtoServicioEstetico> ejecutar(){
+    public List<DtoServicioestetico> ejecutar(){
         return this.daoServicioEstetico.listar();
     }
 

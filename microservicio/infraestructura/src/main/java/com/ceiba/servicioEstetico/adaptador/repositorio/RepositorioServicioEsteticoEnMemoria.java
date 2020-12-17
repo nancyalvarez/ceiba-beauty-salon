@@ -1,9 +1,9 @@
-package com.ceiba.servicioEstetico.adaptador.repositorio;
+package com.ceiba.servicioestetico.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.servicioEstetico.modelo.entidad.ServicioEstetico;
-import com.ceiba.servicioEstetico.puerto.repositorio.RepositorioServicioEstetico;
+import com.ceiba.servicioestetico.modelo.entidad.ServicioEstetico;
+import com.ceiba.servicioestetico.puerto.repositorio.RepositorioServicioEstetico;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 

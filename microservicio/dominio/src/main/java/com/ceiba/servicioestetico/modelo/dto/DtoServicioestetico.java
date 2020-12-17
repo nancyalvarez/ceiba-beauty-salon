@@ -1,15 +1,11 @@
-package com.ceiba.servicioestetico.comando;
+package com.ceiba.servicioestetico.modelo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
-@Setter
 @AllArgsConstructor
-@NoArgsConstructor
-public class ComandoServicioEstetico {
+public class DtoServicioestetico {
 
     private Long id;
     private String idServicio;
@@ -17,5 +13,4 @@ public class ComandoServicioEstetico {
     private String tipoServicio;
     private int costo;
     private boolean estadoServicio;
-
 }

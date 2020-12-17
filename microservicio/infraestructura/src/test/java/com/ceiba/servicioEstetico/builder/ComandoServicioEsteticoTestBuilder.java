@@ -1,22 +1,22 @@
-package com.ceiba.servicioEstetico.builder;
+package com.ceiba.servicioestetico.builder;
 
-import com.ceiba.servicioEstetico.comando.ComandoServicioEstetico;
+import com.ceiba.servicioestetico.comando.ComandoServicioEstetico;
 
 public class ComandoServicioEsteticoTestBuilder {
 
     private Long id;
-    private String id_servicio;
+    private String idServicio;
     private String nombre;
-    private String tipoServicioEstetico;
+    private String tipoServicio;
     private int costo;
-    private boolean estadoServicioEstetico;
+    private boolean estadoServicio;
 
     public ComandoServicioEsteticoTestBuilder(){
-        this.id_servicio = "CE09";
+        this.idServicio = "CE09";
         this.nombre = "Cejas";
-        this.tipoServicioEstetico="Depilacion";
+        this.tipoServicio="Depilacion";
         this.costo = 8000;
-        this.estadoServicioEstetico=true;
+        this.estadoServicio=true;
     }
 
     public ComandoServicioEsteticoTestBuilder setId(Long id){
@@ -24,8 +24,8 @@ public class ComandoServicioEsteticoTestBuilder {
         return this;
     }
 
-    public ComandoServicioEsteticoTestBuilder setId_servicio(String id_servicio){
-        this.id_servicio = id_servicio;
+    public ComandoServicioEsteticoTestBuilder setId_servicio(String idServicio){
+        this.idServicio = idServicio;
         return this;
     }
 
@@ -34,8 +34,8 @@ public class ComandoServicioEsteticoTestBuilder {
         return this;
     }
 
-    public ComandoServicioEsteticoTestBuilder setTipoServicioEstetico(String tipoServicioEstetico){
-        this.tipoServicioEstetico = tipoServicioEstetico;
+    public ComandoServicioEsteticoTestBuilder setTipoServicioEstetico(String tipoServicio){
+        this.tipoServicio = tipoServicio;
         return this;
     }
 
@@ -44,14 +44,14 @@ public class ComandoServicioEsteticoTestBuilder {
         return this;
     }
 
-    public ComandoServicioEsteticoTestBuilder setEstadoServicioEstetico(boolean estadoServicioEstetico){
-        this.estadoServicioEstetico = estadoServicioEstetico;
+    public ComandoServicioEsteticoTestBuilder setEstadoServicio(boolean estadoServicio){
+        this.estadoServicio = estadoServicio;
         return this;
     }
 
     public ComandoServicioEstetico build(){
         return new ComandoServicioEstetico(
-                id, id_servicio, nombre, tipoServicioEstetico, costo, estadoServicioEstetico
+                id, idServicio, nombre, tipoServicio, costo, estadoServicio
         );
     }
 
