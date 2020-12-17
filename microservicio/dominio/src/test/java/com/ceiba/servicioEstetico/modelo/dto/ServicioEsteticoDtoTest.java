@@ -2,6 +2,7 @@ package com.ceiba.servicioEstetico.modelo.dto;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class ServicioEsteticoDtoTest {
@@ -12,15 +13,15 @@ public class ServicioEsteticoDtoTest {
         long id = 1L;
         String IS = "CC03";
         String nombre = "grafilado";
-        String tipoServicioEstetico = "Corte";
+        String tipo = "Corte";
         int costo = 15000;
-        boolean estadoServicioEstetico = true;
+        boolean estado = true;
         //Act
-        DtoServicioEstetico servicioEstetico = new DtoServicioEstetico(id, IS, nombre, tipoServicioEstetico, costo, estadoServicioEstetico);
+        DtoServicioEstetico servicioEstetico = new DtoServicioEstetico(id, IS, nombre, tipo, costo, estado);
         //Assert
         boolean esValido = id == servicioEstetico.getId()&&IS.equals(servicioEstetico.getIS())
-                &&nombre.equals(servicioEstetico.getNombre())&&tipoServicioEstetico.equals(servicioEstetico.getTipoServicioEstetico())
-                &&costo == servicioEstetico.getCosto()&&estadoServicioEstetico==servicioEstetico.isEstadoServicioEstetico();
+                &&nombre.equals(servicioEstetico.getNombre())&&tipo.equals(servicioEstetico.getTipo())
+                &&costo == servicioEstetico.getCosto()&&estado==servicioEstetico.isEstado();
         assertTrue(esValido);
 
     }

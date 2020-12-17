@@ -1,4 +1,4 @@
-rootProject.name = 'microservicio'
+rootProject.name = 'beauty-salon'
 
 include ':infraestructura'
 include ':aplicacion'

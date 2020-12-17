@@ -12,9 +12,9 @@ public class MapeoServicioEstetico implements RowMapper<DtoServicioEstetico>, Ma
     @Override
     public DtoServicioEstetico mapRow(ResultSet rs, int rowNum) throws SQLException {
         Long id = rs.getLong("id");
-        String ise= rs.getString("ise");
+        String ise= rs.getString("id_servicio");
         String nombre= rs.getString("nombre");
-        String tipo = rs.getString("tipo");
+        String tipo = rs.getString("tipo_servicio_estetico");
         int costo = rs.getInt("costo");
         boolean estado= rs.getBoolean("estado");
 

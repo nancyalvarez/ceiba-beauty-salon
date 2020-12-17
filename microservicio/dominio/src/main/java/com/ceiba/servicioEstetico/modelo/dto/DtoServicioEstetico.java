@@ -10,7 +10,7 @@ public class DtoServicioEstetico {
     private Long id;
     private String IS;
     private String nombre;
-    private String tipoServicioEstetico;
+    private String tipo;
     private int costo;
-    private boolean estadoServicioEstetico;
+    private boolean estado;
 }

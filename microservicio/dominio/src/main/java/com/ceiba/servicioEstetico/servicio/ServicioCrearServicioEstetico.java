@@ -20,7 +20,7 @@ public class ServicioCrearServicioEstetico {
     }
 
     private void validarExistenciaPrevia(ServicioEstetico servicioEstetico){
-        boolean existe = this.repositorioServicioEstetico.existe(servicioEstetico.getIS());
+        boolean existe = this.repositorioServicioEstetico.existe(servicioEstetico.getIdServicio());
 
         if (existe){
             throw new ExcepcionDuplicidad(EL_SERVICIO_ESTETICO_YA_EXISTE_EN_EL_SISTEMA);

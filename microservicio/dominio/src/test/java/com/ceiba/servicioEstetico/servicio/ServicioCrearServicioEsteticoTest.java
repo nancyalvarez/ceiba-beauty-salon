@@ -15,7 +15,6 @@ import static org.mockito.Mockito.when;
 
 public class ServicioCrearServicioEsteticoTest {
 
-    public static final String YA_EXISTE_SERVICIO_ESTETICO_REGISTRADO = "Ya existe el servicio estético registrado";
     public static final String TIPO_SERVICIO_ESTETICO_INVALIDO = "El tipo de servicio estético es inválido";
 
     private RepositorioServicioEstetico repositorioServicioEstetico;
@@ -23,22 +22,6 @@ public class ServicioCrearServicioEsteticoTest {
     @Before
     public void setUp(){
         repositorioServicioEstetico = mock(RepositorioServicioEstetico.class);
-    }
-
-    /**
-     * Prueba que el sistema valida que no se guarden dos servicios estético con el mismo IS
-     */
-    @Test
-    public void validarExistenciaPreviaServicioEsteticoTest(){
-        //Arrange
-        ServicioEstetico servicioEstetico = new ServicioEsteticoTestBuilder().build();
-        when(repositorioServicioEstetico.existe(anyString())).thenReturn(true);
-        ServicioCrearServicioEstetico servicioCrearServicioEstetico = new ServicioCrearServicioEstetico(repositorioServicioEstetico);
-        //Act - Assert
-        BasePrueba.assertThrows(
-                () -> servicioCrearServicioEstetico.ejecutar(servicioEstetico),
-                ExcepcionDuplicidad.class, YA_EXISTE_SERVICIO_ESTETICO_REGISTRADO
-        );
     }
 
     /**
@@ -50,9 +33,9 @@ public class ServicioCrearServicioEsteticoTest {
         ServicioEstetico servicioEstetico = new ServicioEsteticoTestBuilder()
                 .setIS("DP33")
                 .setNombre("piernas")
-                .setTipoServicioEstetico("Depilacion")
+                .setTipo("Depilacion")
                 .setCosto(12000)
-                .setEstadoServicioEstetico(true)
+                .setEstado(true)
                 .build();
         when(repositorioServicioEstetico.existe(anyString())).thenReturn(false);
         when(repositorioServicioEstetico.crear(servicioEstetico)).thenReturn(2L);

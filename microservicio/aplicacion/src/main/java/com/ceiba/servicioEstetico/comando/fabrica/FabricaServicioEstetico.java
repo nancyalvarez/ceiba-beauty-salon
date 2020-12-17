@@ -10,7 +10,7 @@ public class FabricaServicioEstetico {
     public ServicioEstetico crear(ComandoServicioEstetico comandoServicioEstetico){
         return new ServicioEstetico(
                 comandoServicioEstetico.getId(),
-                comandoServicioEstetico.getIS(),
+                comandoServicioEstetico.getId_servicio(),
                 comandoServicioEstetico.getNombre(),
                 comandoServicioEstetico.getTipoServicioEstetico(),
                 comandoServicioEstetico.getCosto(),

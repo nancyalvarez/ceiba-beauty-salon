@@ -12,7 +12,7 @@ import lombok.Setter;
 public class ComandoServicioEstetico {
 
     private Long id;
-    private String IS;
+    private String id_servicio;
     private String nombre;
     private String tipoServicioEstetico;
     private int costo;

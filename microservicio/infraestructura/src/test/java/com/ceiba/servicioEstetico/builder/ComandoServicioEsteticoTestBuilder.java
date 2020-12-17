@@ -5,14 +5,14 @@ import com.ceiba.servicioEstetico.comando.ComandoServicioEstetico;
 public class ComandoServicioEsteticoTestBuilder {
 
     private Long id;
-    private String IS;
+    private String id_servicio;
     private String nombre;
     private String tipoServicioEstetico;
     private int costo;
     private boolean estadoServicioEstetico;
 
     public ComandoServicioEsteticoTestBuilder(){
-        this.IS = "DS21";
+        this.id_servicio = "CE09";
         this.nombre = "Cejas";
         this.tipoServicioEstetico="Depilacion";
         this.costo = 8000;
@@ -24,8 +24,8 @@ public class ComandoServicioEsteticoTestBuilder {
         return this;
     }
 
-    public ComandoServicioEsteticoTestBuilder setIS(String IS){
-        this.IS = IS;
+    public ComandoServicioEsteticoTestBuilder setId_servicio(String id_servicio){
+        this.id_servicio = id_servicio;
         return this;
     }
 
@@ -51,7 +51,7 @@ public class ComandoServicioEsteticoTestBuilder {
 
     public ComandoServicioEstetico build(){
         return new ComandoServicioEstetico(
-                id, IS, nombre, tipoServicioEstetico, costo, estadoServicioEstetico
+                id, id_servicio, nombre, tipoServicioEstetico, costo, estadoServicioEstetico
         );
     }
 

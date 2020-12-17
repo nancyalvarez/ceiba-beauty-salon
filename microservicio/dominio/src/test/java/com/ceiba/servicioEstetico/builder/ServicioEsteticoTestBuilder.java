@@ -6,17 +6,17 @@ public class ServicioEsteticoTestBuilder {
     private Long id;
     private String IS;
     private String nombre;
-    private String tipoServicioEstetico;
+    private String tipo;
     private int costo;
-    private boolean estadoServicioEstetico;
+    private boolean estado;
 
     public ServicioEsteticoTestBuilder(){
         this.id = 1L;
         this.IS = "CA22";
         this.nombre = "cejas";
-        this.tipoServicioEstetico = "Depilacion";
+        this.tipo = "Depilacion";
         this.costo = 7000;
-        this.estadoServicioEstetico = true;
+        this.estado = true;
     }
 
     public ServicioEsteticoTestBuilder setId(Long id) {
@@ -34,8 +34,8 @@ public class ServicioEsteticoTestBuilder {
         return this;
     }
 
-    public ServicioEsteticoTestBuilder setTipoServicioEstetico(String tipoServicioEstetico) {
-        this.tipoServicioEstetico = tipoServicioEstetico;
+    public ServicioEsteticoTestBuilder setTipo(String tipo) {
+        this.tipo = tipo;
         return this;
     }
 
@@ -44,12 +44,12 @@ public class ServicioEsteticoTestBuilder {
         return this;
     }
 
-    public ServicioEsteticoTestBuilder setEstadoServicioEstetico(boolean estadoServicioEstetico) {
-        this.estadoServicioEstetico = estadoServicioEstetico;
+    public ServicioEsteticoTestBuilder setEstado(boolean estado) {
+        this.estado = estado;
         return this;
     }
 
     public ServicioEstetico build(){
-        return new ServicioEstetico(id, IS, nombre, tipoServicioEstetico, costo, estadoServicioEstetico);
+        return new ServicioEstetico(id, IS, nombre, tipo, costo, estado);
     }
 }

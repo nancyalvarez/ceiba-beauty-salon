@@ -28,9 +28,9 @@ public class RepositorioServicioEsteticoEnMemoria implements RepositorioServicio
     }
 
     @Override
-    public boolean existe(String IS) {
+    public boolean existe(String idServicio) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("ise", IS);
+        paramSource.addValue("idServicio", idServicio);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);
     }
 }

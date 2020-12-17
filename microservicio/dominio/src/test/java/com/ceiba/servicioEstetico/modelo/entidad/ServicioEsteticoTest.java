@@ -7,13 +7,15 @@ import com.ceiba.servicioEstetico.builder.ServicioEsteticoTestBuilder;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.mockito.Mockito.when;
+
 public class ServicioEsteticoTest {
 
-    private static final String IS_SERVICIO_ESTETICO_REQUERIDO = "Se debe diligenciar el IS del servicio estético";
+    private static final String ID_SERVICIO_ESTETICO_REQUERIDO = "Se debe diligenciar el IS del servicio estético";
     private static final String NOMBRE_SERVICIO_ESTETICO_REQUERIDO = "Se debe diligenciar el nombre del servicio estético";
     private static final String TIPO_SERVICIO_ESTETICO_REQUERIDO = "Se debe definir el tipo de servicio estético";
     private static final String TIPO_SERVICIO_ESTETICO_INVALIDO = "El tipo de servicio estético no corresponde";
-    private static final String COSTO_SERVICIO_ESTETICO_REQUERIDO = "Se debe diligenciar el costo del servicio estetico";
+
 
     private ServicioEsteticoTestBuilder servicioEsteticoBuilder;
 
@@ -23,11 +25,11 @@ public class ServicioEsteticoTest {
     }
 
     @Test
-    public void validarISServicioEsteticoRequerido(){
+    public void validarIdServicioEsteticoRequerido(){
         //Arrange
         servicioEsteticoBuilder.setIS(null);
         //Act - Assert
-        BasePrueba.assertThrows(servicioEsteticoBuilder::build, ExcepcionValorObligatorio.class, IS_SERVICIO_ESTETICO_REQUERIDO);
+        BasePrueba.assertThrows(servicioEsteticoBuilder::build, ExcepcionValorObligatorio.class, ID_SERVICIO_ESTETICO_REQUERIDO);
     }
 
     @Test
@@ -41,7 +43,7 @@ public class ServicioEsteticoTest {
     @Test
     public void validarTipoServicioEsteticoRequerido(){
         //Arrange
-        servicioEsteticoBuilder.setTipoServicioEstetico(null);
+        servicioEsteticoBuilder.setTipo(null);
         //Act - Assert
         BasePrueba.assertThrows(servicioEsteticoBuilder::build, ExcepcionValorObligatorio.class, TIPO_SERVICIO_ESTETICO_REQUERIDO);
     }
@@ -49,17 +51,9 @@ public class ServicioEsteticoTest {
     @Test
     public void validarTipoServicioEsteticoNoHabilitado(){
         //Arrange
-        servicioEsteticoBuilder.setTipoServicioEstetico("NO_EXISTE");
+        servicioEsteticoBuilder.setTipo("NO_EXISTE");
         //Act - Assert
         BasePrueba.assertThrows(servicioEsteticoBuilder::build, ExcepcionValorInvalido.class, TIPO_SERVICIO_ESTETICO_INVALIDO);
-    }
-
-    @Test
-    public void validarCostoservicioEsteticoRequerido(){
-        //Arrange
-        servicioEsteticoBuilder.setCosto(0);
-        //Act - Assert
-        BasePrueba.assertThrows(servicioEsteticoBuilder::build, ExcepcionValorObligatorio.class, COSTO_SERVICIO_ESTETICO_REQUERIDO);
     }
 
     @Test
@@ -67,22 +61,24 @@ public class ServicioEsteticoTest {
 
         //Arrange
         long id = 1L;
-        String IS = "TR03";
+        String id_servicio = "TR03";
         String nombre = "semipermanente";
-        String tipoServicioEstetico = "Tinte";
+        String tipo = "Tinte";
         int costo = 120000;
-        boolean estadoServicioEstetico = true;
+        boolean estado = true;
 
-        servicioEsteticoBuilder.setIS(IS).setNombre(nombre)
-            .setTipoServicioEstetico(tipoServicioEstetico)
-            .setCosto(costo).setEstadoServicioEstetico(estadoServicioEstetico);
+        servicioEsteticoBuilder.setIS(id_servicio)
+                .setNombre(nombre)
+                .setTipo(tipo)
+                .setCosto(costo)
+                .setEstado(estado);
 
         //Act
         ServicioEstetico servicioEstetico = servicioEsteticoBuilder.build();
         //Assert
-        boolean esValido= IS.equals(servicioEstetico.getIS()) && nombre.equals(servicioEstetico.getNombre())
-                && tipoServicioEstetico.equals(servicioEstetico.getTipoServicioEstetico()) && costo==servicioEstetico.getCosto()
-                && estadoServicioEstetico == servicioEstetico.isEstadoServicioEstetico();
+        boolean esValido= id_servicio.equals(servicioEstetico.getIdServicio()) && nombre.equals(servicioEstetico.getNombre())
+                && tipo.equals(servicioEstetico.getTipoServicioEstetico()) && costo==servicioEstetico.getCosto()
+                && estado == servicioEstetico.isEstadoServicioEstetico();
 
 
     }

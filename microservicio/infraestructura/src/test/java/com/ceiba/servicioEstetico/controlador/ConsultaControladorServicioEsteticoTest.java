@@ -35,9 +35,9 @@ public class ConsultaControladorServicioEsteticoTest {
                 // Assert
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", not(empty())))
-                .andExpect(jsonPath("$[*].ise", hasItem("TT01")))
-                .andExpect(jsonPath("$[*].nombre", hasItem("Rayos")))
-                .andExpect(jsonPath("$[*].tipo", hasItem("Tinte")))
+                .andExpect(jsonPath("$[*].is", hasItem("CE07")))
+                .andExpect(jsonPath("$[*].nombre", hasItem("Corte de hombre")))
+                .andExpect(jsonPath("$[*].tipo", hasItem("Corte")))
                 .andExpect(jsonPath("$[*].costo", hasItem(150000)))
                 .andExpect(jsonPath("$[*].estado", hasItem(true)));
     }

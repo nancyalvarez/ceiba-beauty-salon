@@ -32,20 +32,16 @@ public class ComandoControladorServicioEsteticoTest {
     @Autowired
     private MockMvc mocMvc;
 
-    /**
-     * valida la correcta creacion de un servicio estetico
-     * Se obtiene el id
-     */
     @Test
     public void validarCorrectaCreacionServicioEstetico() throws Exception{
         //Arrage
         ComandoServicioEstetico comandoServicioEstetico = new ComandoServicioEsteticoTestBuilder()
-              .setIS("ED45")
-              .setNombre("zonaV")
-              .setTipoServicioEstetico("Depilacion")
-              .setCosto(15000)
-              .setEstadoServicioEstetico(true)
-              .build();
+                .setId_servicio("TT02")
+                .setNombre("Rayos")
+                .setTipoServicioEstetico("Tinte")
+                .setCosto(150000)
+                .setEstadoServicioEstetico(true)
+                .build();
 
         //Act
         MvcResult result = mocMvc.perform(post(ENDPOINT)
@@ -54,6 +50,7 @@ public class ComandoControladorServicioEsteticoTest {
                     //Assert
                     .andExpect(status().isOk())
                     .andReturn();
+
         String json = result.getResponse().getContentAsString();
 
         ObjetoRespuestaCreacion comandoRespuesta = objectMapper.readValue(

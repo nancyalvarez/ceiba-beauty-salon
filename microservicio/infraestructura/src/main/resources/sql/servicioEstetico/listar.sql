@@ -1,2 +1,2 @@
-select id, ise, nombre, tipo, costo, estado
+select id, id_servicio, nombre, tipo_servicio_estetico, costo, estado
 from servicio_estetico
