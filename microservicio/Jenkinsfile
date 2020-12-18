@@ -33,20 +33,15 @@ pipeline {
                     url:'https://github.com/nancyalvarez/ceiba-beauty-salon.git'
                 ]]
             ])
+            sh 'gradle --b ./microservicio/build.gradle clean'
         }
     }
 
-    stage('Clean') {
-      steps{
-        echo "------------>Clean<------------"
-        sh './gradlew --b ./microservicio/build.gradle clean'
-      }
-    }
 
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Unit Tests<------------"
-        sh './gradlew --b ./microservicio/build.gradle test'
+        sh 'gradle --b ./microservicio/build.gradle test'
       }
     }
 
@@ -62,7 +57,7 @@ pipeline {
     stage('Build') {
       steps {
         echo "------------>Build<------------"
-        sh './gradlew --b ./microservicio/build.gradle build -x test'
+        sh 'gradle --b ./microservicio/build.gradle build -x test'
       }
     }
   }
