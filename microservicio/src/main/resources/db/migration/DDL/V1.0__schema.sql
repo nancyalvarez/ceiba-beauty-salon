@@ -7,4 +7,3 @@ create table servicio_estetico(
     estado_servicio boolean not null,
     primary key (id)
 );
-

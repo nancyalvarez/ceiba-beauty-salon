@@ -1,13 +1,12 @@
 package com.ceiba.servicioestetico.adaptador.mapper;
 
-import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.servicioestetico.modelo.dto.DtoServicioestetico;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MapeoServicioEstetico implements RowMapper<DtoServicioestetico>, MapperResult {
+public class MapeoServicioEstetico implements RowMapper<DtoServicioestetico>{
 
     @Override
     public DtoServicioestetico mapRow(ResultSet rs, int rowNum) throws SQLException {

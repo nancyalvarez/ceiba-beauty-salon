@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 
 public class ServicioEsteticoTest {
 
-    private static final String ID_SERVICIO_ESTETICO_REQUERIDO = "Se debe diligenciar el IS del servicio estético";
+    private static final String ID_SERVICIO_ESTETICO_REQUERIDO = "Se debe diligenciar el identificador del servicio estético";
     private static final String NOMBRE_SERVICIO_ESTETICO_REQUERIDO = "Se debe diligenciar el nombre del servicio estético";
     private static final String TIPO_SERVICIO_ESTETICO_REQUERIDO = "Se debe definir el tipo de servicio estético";
     private static final String TIPO_SERVICIO_ESTETICO_INVALIDO = "El tipo de servicio estético no corresponde";
