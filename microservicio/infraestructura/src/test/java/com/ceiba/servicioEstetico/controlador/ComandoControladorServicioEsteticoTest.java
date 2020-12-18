@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(ComandoControladorServicioEstetico.class)
 public class ComandoControladorServicioEsteticoTest {
 
-    private static final String ENDPOINT = "/servicios_esteticos";
+    private static final String ENDPOINT = "/beauty-services";
 
     @Autowired
     private MockMvc mockMvc;

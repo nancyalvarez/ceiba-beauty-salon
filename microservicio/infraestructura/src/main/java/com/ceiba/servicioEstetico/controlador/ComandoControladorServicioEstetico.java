@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RestControllerAdvice
-@RequestMapping("/servicios_esteticos")
+@RequestMapping("/beauty-services")
 @Api(tags = {"Controlador comando de servicios esteticos"})
 public class ComandoControladorServicioEstetico {
 

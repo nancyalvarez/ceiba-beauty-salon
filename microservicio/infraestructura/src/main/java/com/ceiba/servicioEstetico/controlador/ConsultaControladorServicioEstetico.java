@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RestControllerAdvice
-@RequestMapping("/servicios_esteticos")
+@RequestMapping("/beauty-services")
 @Api(tags = {"Controlador consulta de servicios esteticos"})
 public class ConsultaControladorServicioEstetico {
     private final ManejadorListarServicioEstetico manejadorListarServicioEstetico;
