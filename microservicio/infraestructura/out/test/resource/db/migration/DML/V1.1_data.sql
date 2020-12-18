@@ -1,2 +1,2 @@
-insert into servicio_estetico(id, ise, nombre, tipo, costo, estado)
-    values(2, "TTT1", "platinas", "Tinte", 120000, true);
+--insert into servicio_estetico(id, idServicio, nombre, tipoServicio, costo, estadoServicio)
+   -- values(2, "TTT1", "platinas", "TINTE", 120000, true);

@@ -1,1 +1,1 @@
---insert into servicio_estetico(id, ise, nombre, tipo, costo, estado) values (1, "DC03", "Cejas", "Depilacion", 8000, true);
+--insert into servicio_estetico(id, idServicio, nombre, tipoServicio, costo, estadoServicio) values (1, "DC03", "Cejas", "DEPILACION", 8000, true);

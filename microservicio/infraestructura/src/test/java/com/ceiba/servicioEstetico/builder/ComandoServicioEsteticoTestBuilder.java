@@ -14,7 +14,7 @@ public class ComandoServicioEsteticoTestBuilder {
     public ComandoServicioEsteticoTestBuilder(){
         this.idServicio = "CE09";
         this.nombre = "Cejas";
-        this.tipoServicio="Depilacion";
+        this.tipoServicio="DEPILACION";
         this.costo = 8000;
         this.estadoServicio=true;
     }
@@ -24,7 +24,7 @@ public class ComandoServicioEsteticoTestBuilder {
         return this;
     }
 
-    public ComandoServicioEsteticoTestBuilder setId_servicio(String idServicio){
+    public ComandoServicioEsteticoTestBuilder setIdServicio(String idServicio){
         this.idServicio = idServicio;
         return this;
     }
@@ -34,7 +34,7 @@ public class ComandoServicioEsteticoTestBuilder {
         return this;
     }
 
-    public ComandoServicioEsteticoTestBuilder setTipoServicioEstetico(String tipoServicio){
+    public ComandoServicioEsteticoTestBuilder setTipoServicio(String tipoServicio){
         this.tipoServicio = tipoServicio;
         return this;
     }

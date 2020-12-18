@@ -8,12 +8,12 @@ import static org.junit.Assert.assertTrue;
 public class ServicioEsteticoDtoTest {
 
     @Test
-    public void validarISServicioEsteticoRequerido(){
+    public void validarIdServicioEsteticoRequerido(){
         //Arrange
         long id = 1L;
         String idServicio = "CC03";
         String nombre = "grafilado";
-        String tipoServicio = "Corte";
+        String tipoServicio = "CORTE";
         int costo = 15000;
         boolean estadoServicio = true;
         //Act

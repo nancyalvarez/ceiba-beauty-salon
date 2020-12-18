@@ -24,21 +24,6 @@ public class ConsultaControladorServicioEsteticoTest {
     @Autowired
     private MockMvc mocMvc;
 
-    /**
-     * Prueba el correcto funcionamiento del listar servicios esteticos
-     */
-    @Test
-    public void validarListadoServicioEstetico() throws Exception{
-        // Arrange - Act
-        mocMvc.perform(get("/servicios_esteticos")
-                .contentType(MediaType.APPLICATION_JSON))
-                // Assert
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", not(empty())))
-                .andExpect(jsonPath("$[*].is", hasItem("CE07")))
-                .andExpect(jsonPath("$[*].nombre", hasItem("Corte de hombre")))
-                .andExpect(jsonPath("$[*].tipo", hasItem("Corte")))
-                .andExpect(jsonPath("$[*].costo", hasItem(150000)))
-                .andExpect(jsonPath("$[*].estado", hasItem(true)));
-    }
+
+
 }

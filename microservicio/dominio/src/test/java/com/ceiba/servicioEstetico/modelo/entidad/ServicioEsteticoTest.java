@@ -49,7 +49,7 @@ public class ServicioEsteticoTest {
     }
 
     @Test
-    public void validarTipoServicioEsteticoNoHabilitado(){
+    public void validarTipoServicioEsteticoNoExiste(){
         //Arrange
         servicioEsteticoBuilder.setTipoServicio("NO_EXISTE");
         //Act - Assert
@@ -63,7 +63,7 @@ public class ServicioEsteticoTest {
         long id = 1L;
         String idServicio = "TR03";
         String nombre = "semipermanente";
-        String tipoServicio = "Tinte";
+        String tipoServicio = "TINTE";
         int costo = 120000;
         boolean estadoServicio = true;
 

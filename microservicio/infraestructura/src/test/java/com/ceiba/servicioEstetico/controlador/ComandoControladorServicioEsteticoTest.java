@@ -1,8 +1,8 @@
 package com.ceiba.servicioestetico.controlador;
 
 import com.ceiba.ApplicationMock;
+import com.ceiba.servicioestetico.builder.ComandoRespuestaCrear;
 import com.ceiba.servicioestetico.builder.ComandoServicioEsteticoTestBuilder;
-import com.ceiba.servicioestetico.builder.ObjetoRespuestaCreacion;
 import com.ceiba.servicioestetico.comando.ComandoServicioEstetico;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
@@ -27,39 +27,39 @@ public class ComandoControladorServicioEsteticoTest {
     private static final String ENDPOINT = "/servicios_esteticos";
 
     @Autowired
-    private ObjectMapper objectMapper;
+    private MockMvc mockMvc;
 
     @Autowired
-    private MockMvc mocMvc;
+    private ObjectMapper objectMapper;
 
     @Test
-    public void validarCorrectaCreacionServicioEstetico() throws Exception{
-        //Arrage
+    public void validarCreacionServicioEstetico() throws Exception{
+        //Arrange
         ComandoServicioEstetico comandoServicioEstetico = new ComandoServicioEsteticoTestBuilder()
-                .setId_servicio("TT02")
+                .setIdServicio("TT02")
                 .setNombre("Rayos")
-                .setTipoServicioEstetico("Tinte")
+                .setTipoServicio("TINTE")
                 .setCosto(150000)
                 .setEstadoServicio(true)
                 .build();
-
         //Act
-        MvcResult result = mocMvc.perform(post(ENDPOINT)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .content(objectMapper.writeValueAsString(comandoServicioEstetico)))
-                    //Assert
-                    .andExpect(status().isOk())
-                    .andReturn();
+        MvcResult result = mockMvc.perform(post(ENDPOINT)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(comandoServicioEstetico)))
+                //Assert
+                .andExpect(status().isOk())
+                .andReturn();
 
         String json = result.getResponse().getContentAsString();
 
-        ObjetoRespuestaCreacion comandoRespuesta = objectMapper.readValue(
-                json, ObjetoRespuestaCreacion.class
+        ComandoRespuestaCrear comandoRespuesta = objectMapper.readValue(
+                json, ComandoRespuestaCrear.class
         );
         //Assert.assertNotNull(comandoRepuesta.getValor());
         //Assert.assertThat(comandoRespuesta.getValor(), Matchers.greaterThan(0L));
         boolean isOK = comandoRespuesta.getValor() != null && (comandoRespuesta.getValor())>0;
         Assert.assertTrue(isOK);
+
 
     }
 

@@ -1,5 +1,7 @@
 package com.ceiba.servicioestetico.servicio;
 
+import com.ceiba.BasePrueba;
+import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.servicioestetico.builder.ServicioEsteticoTestBuilder;
 import com.ceiba.servicioestetico.modelo.entidad.ServicioEstetico;
 import com.ceiba.servicioestetico.puerto.repositorio.RepositorioServicioEstetico;
@@ -13,7 +15,7 @@ import static org.mockito.Mockito.when;
 
 public class ServicioCrearServicioEsteticoTest {
 
-    public static final String TIPO_SERVICIO_ESTETICO_INVALIDO = "El tipo de servicio estético es inválido";
+    public static final String EL_SERVICIO_ESTETICO_YA_EXISTE_EN_EL_SISTEMA = "El servicio estético ya existe en el sistema";
 
     private RepositorioServicioEstetico repositorioServicioEstetico;
 
@@ -31,7 +33,7 @@ public class ServicioCrearServicioEsteticoTest {
         ServicioEstetico servicioEstetico = new ServicioEsteticoTestBuilder()
                 .setIdServicio("DP33")
                 .setNombre("piernas")
-                .setTipoServicio("Depilacion")
+                .setTipoServicio("DEPILACION")
                 .setCosto(12000)
                 .setEstadoServicio(true)
                 .build();
@@ -39,8 +41,22 @@ public class ServicioCrearServicioEsteticoTest {
         when(repositorioServicioEstetico.crear(servicioEstetico)).thenReturn(2L);
         ServicioCrearServicioEstetico servicioCrearServicioEstetico = new ServicioCrearServicioEstetico(repositorioServicioEstetico);
         //Act
-        long idServicioEstetico = servicioCrearServicioEstetico.ejecutar(servicioEstetico);
+        long idServicio = servicioCrearServicioEstetico.ejecutar(servicioEstetico);
         //Assert
-        Assert.assertEquals(2L, idServicioEstetico);
+        Assert.assertEquals(2L, idServicio);
+    }
+
+    @Test
+    public void validarExistenciaPrevia(){
+        //Arrange
+        ServicioEstetico servicioEstetico = new ServicioEsteticoTestBuilder()
+                .setTipoServicio("DEPILACION").build();
+        when(repositorioServicioEstetico.existe(anyString())).thenReturn(true);
+        ServicioCrearServicioEstetico servicioCrearServicioEstetico = new ServicioCrearServicioEstetico(repositorioServicioEstetico);
+        //Act Assert
+        BasePrueba.assertThrows(
+                ()->servicioCrearServicioEstetico.ejecutar(servicioEstetico),
+                ExcepcionDuplicidad.class,EL_SERVICIO_ESTETICO_YA_EXISTE_EN_EL_SISTEMA);
+
     }
 }
