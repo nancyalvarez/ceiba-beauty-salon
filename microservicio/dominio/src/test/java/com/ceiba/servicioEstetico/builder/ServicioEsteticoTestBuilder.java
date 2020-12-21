@@ -14,7 +14,7 @@ public class ServicioEsteticoTestBuilder {
         this.id = 1L;
         this.idServicio = "CA22";
         this.nombre = "cejas";
-        this.tipoServicio = "Depilacion";
+        this.tipoServicio = "DEPILACION";
         this.costo = 7000;
         this.estadoServicio = true;
     }

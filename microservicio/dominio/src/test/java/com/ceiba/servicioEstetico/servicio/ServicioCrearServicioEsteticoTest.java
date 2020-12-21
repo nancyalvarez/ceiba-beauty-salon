@@ -2,7 +2,6 @@ package com.ceiba.servicioestetico.servicio;
 
 import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
-import com.ceiba.servicioestetico.builder.ServicioEsteticoTestBuilder;
 import com.ceiba.servicioestetico.modelo.entidad.ServicioEstetico;
 import com.ceiba.servicioestetico.puerto.repositorio.RepositorioServicioEstetico;
 import org.junit.Assert;
@@ -45,7 +44,7 @@ public class ServicioCrearServicioEsteticoTest {
     @Test
     public void validarExistenciaPrevia(){
         //Arrange
-        ServicioEstetico servicioEstetico = aServicioEstetico().conIdServicio("DEPILACION").build();
+        ServicioEstetico servicioEstetico = aServicioEstetico().conIdServicio("CA22").build();
         when(repositorioServicioEstetico.existe(anyString())).thenReturn(true);
         ServicioCrearServicioEstetico servicioCrearServicioEstetico = new ServicioCrearServicioEstetico(repositorioServicioEstetico);
         //Act Assert

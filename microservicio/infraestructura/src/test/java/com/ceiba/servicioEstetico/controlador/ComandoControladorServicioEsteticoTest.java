@@ -1,7 +1,7 @@
 package com.ceiba.servicioestetico.controlador;
 
 import com.ceiba.ApplicationMock;
-import com.ceiba.ComandoRespuesta;
+import com.ceiba.servicioestetico.builder.ObjetoRespuestaComandoCrear;
 import com.ceiba.servicioestetico.comando.ComandoServicioEstetico;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
@@ -52,12 +52,11 @@ public class ComandoControladorServicioEsteticoTest {
 
         String json = result.getResponse().getContentAsString();
 
-        ComandoRespuesta<Long> comandoRespuesta = objectMapper.readValue(
-                json, ComandoRespuesta.class
-        );
+        ObjetoRespuestaComandoCrear comandoRespuesta = objectMapper.readValue(
+                json, ObjetoRespuestaComandoCrear.class);
         //Assert.assertNotNull(comandoRepuesta.getValor());
         //Assert.assertThat(comandoRespuesta.getValor(), Matchers.greaterThan(0L));
-        boolean isOK = comandoRespuesta.getValor() != null && (comandoRespuesta.getValor())>0;
+        boolean isOK = comandoRespuesta.getValor() != null && ((Long)comandoRespuesta.getValor())>0;
         Assert.assertTrue(isOK);
 
 
