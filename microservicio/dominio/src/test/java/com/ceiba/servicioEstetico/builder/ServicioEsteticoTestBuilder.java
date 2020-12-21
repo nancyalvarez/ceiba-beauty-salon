@@ -19,37 +19,56 @@ public class ServicioEsteticoTestBuilder {
         this.estadoServicio = true;
     }
 
-    public ServicioEsteticoTestBuilder setId(Long id) {
+    public ServicioEsteticoTestBuilder conId(Long id) {
         this.id = id;
         return this;
     }
 
-    public ServicioEsteticoTestBuilder setIdServicio(String idServicio){
+    public ServicioEsteticoTestBuilder conIdServicio(String idServicio){
         this.idServicio = idServicio;
         return this;
     }
 
-    public ServicioEsteticoTestBuilder setNombre(String nombre) {
+    public ServicioEsteticoTestBuilder sinIdServicio(){
+        this.idServicio = null;
+        return this;
+    }
+
+    public ServicioEsteticoTestBuilder conNombre(String nombre) {
         this.nombre = nombre;
         return this;
     }
 
-    public ServicioEsteticoTestBuilder setTipoServicio(String tipoServicio) {
+    public ServicioEsteticoTestBuilder sinNombre(){
+        this.nombre = null;
+        return this;
+    }
+
+    public ServicioEsteticoTestBuilder conTipoServicio(String tipoServicio) {
         this.tipoServicio = tipoServicio;
         return this;
     }
 
-    public ServicioEsteticoTestBuilder setCosto(int costo) {
+    public ServicioEsteticoTestBuilder sinTipoServicio(){
+        this.tipoServicio = null;
+        return this;
+    }
+
+    public ServicioEsteticoTestBuilder conCosto(int costo) {
         this.costo = costo;
         return this;
     }
 
-    public ServicioEsteticoTestBuilder setEstadoServicio(boolean estadoServicio) {
+    public ServicioEsteticoTestBuilder conEstadoServicio(boolean estadoServicio) {
         this.estadoServicio = estadoServicio;
         return this;
     }
 
     public ServicioEstetico build(){
         return new ServicioEstetico(id, idServicio, nombre, tipoServicio, costo, estadoServicio);
+    }
+
+    public static ServicioEsteticoTestBuilder aServicioEstetico(){
+        return new ServicioEsteticoTestBuilder();
     }
 }

@@ -13,6 +13,8 @@ import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import static com.ceiba.servicioestetico.builder.ServicioEsteticoTestBuilder.aServicioEstetico;
+
 public class ServicioCrearServicioEsteticoTest {
 
     public static final String EL_SERVICIO_ESTETICO_YA_EXISTE_EN_EL_SISTEMA = "El servicio estético ya existe en el sistema";
@@ -30,27 +32,20 @@ public class ServicioCrearServicioEsteticoTest {
     @Test
     public void validarCreacionServicioEstetico(){
         //Arrange
-        ServicioEstetico servicioEstetico = new ServicioEsteticoTestBuilder()
-                .setIdServicio("DP33")
-                .setNombre("piernas")
-                .setTipoServicio("DEPILACION")
-                .setCosto(12000)
-                .setEstadoServicio(true)
-                .build();
+        ServicioEstetico servicioEstetico = aServicioEstetico().build();
         when(repositorioServicioEstetico.existe(anyString())).thenReturn(false);
-        when(repositorioServicioEstetico.crear(servicioEstetico)).thenReturn(2L);
+        when(repositorioServicioEstetico.crear(servicioEstetico)).thenReturn(1L);
         ServicioCrearServicioEstetico servicioCrearServicioEstetico = new ServicioCrearServicioEstetico(repositorioServicioEstetico);
         //Act
         long idServicio = servicioCrearServicioEstetico.ejecutar(servicioEstetico);
         //Assert
-        Assert.assertEquals(2L, idServicio);
+        Assert.assertEquals(1L, idServicio);
     }
 
     @Test
     public void validarExistenciaPrevia(){
         //Arrange
-        ServicioEstetico servicioEstetico = new ServicioEsteticoTestBuilder()
-                .setTipoServicio("DEPILACION").build();
+        ServicioEstetico servicioEstetico = aServicioEstetico().conIdServicio("DEPILACION").build();
         when(repositorioServicioEstetico.existe(anyString())).thenReturn(true);
         ServicioCrearServicioEstetico servicioCrearServicioEstetico = new ServicioCrearServicioEstetico(repositorioServicioEstetico);
         //Act Assert

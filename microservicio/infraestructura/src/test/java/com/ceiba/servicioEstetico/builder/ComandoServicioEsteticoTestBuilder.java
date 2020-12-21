@@ -19,40 +19,42 @@ public class ComandoServicioEsteticoTestBuilder {
         this.estadoServicio=true;
     }
 
-    public ComandoServicioEsteticoTestBuilder setId(Long id){
+    public ComandoServicioEsteticoTestBuilder conId(Long id){
         this.id = id;
         return this;
     }
 
-    public ComandoServicioEsteticoTestBuilder setIdServicio(String idServicio){
+    public ComandoServicioEsteticoTestBuilder conIdServicio(String idServicio){
         this.idServicio = idServicio;
         return this;
     }
 
-    public ComandoServicioEsteticoTestBuilder setNombre(String nombre){
+    public ComandoServicioEsteticoTestBuilder conNombre(String nombre){
         this.nombre = nombre;
         return this;
     }
 
-    public ComandoServicioEsteticoTestBuilder setTipoServicio(String tipoServicio){
+    public ComandoServicioEsteticoTestBuilder conTipoServicio(String tipoServicio){
         this.tipoServicio = tipoServicio;
         return this;
     }
 
-    public ComandoServicioEsteticoTestBuilder setCosto(int costo){
+    public ComandoServicioEsteticoTestBuilder conCosto(int costo){
         this.costo = costo;
         return this;
     }
 
-    public ComandoServicioEsteticoTestBuilder setEstadoServicio(boolean estadoServicio){
+    public ComandoServicioEsteticoTestBuilder conEstadoServicio(boolean estadoServicio){
         this.estadoServicio = estadoServicio;
         return this;
     }
 
     public ComandoServicioEstetico build(){
-        return new ComandoServicioEstetico(
-                id, idServicio, nombre, tipoServicio, costo, estadoServicio
-        );
+        return new ComandoServicioEstetico(id, idServicio, nombre, tipoServicio, costo, estadoServicio);
+    }
+
+    public static ComandoServicioEsteticoTestBuilder aComandoServicioEstetico(){
+        return new ComandoServicioEsteticoTestBuilder();
     }
 
 }

@@ -1,10 +1,10 @@
 package com.ceiba.servicioestetico.modelo.entidad;
 
-import lombok.Getter;
-import lombok.Setter;
 
 import static com.ceiba.dominio.ValidadorArgumento.*;
 import com.ceiba.servicioestetico.constant.TipoServicio;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.List;
 
 @RestController
-@RestControllerAdvice
 @RequestMapping("/beauty-services")
 @Api(tags = {"Controlador consulta de servicios esteticos"})
 public class ConsultaControladorServicioEstetico {
