@@ -15,6 +15,7 @@ import java.util.List;
 @RequestMapping("/beauty-services")
 @Api(tags = {"Controlador consulta de servicios esteticos"})
 public class ConsultaControladorServicioEstetico {
+
     private final ManejadorListarServicioEstetico manejadorListarServicioEstetico;
 
     public ConsultaControladorServicioEstetico(ManejadorListarServicioEstetico manejadorListarServicioEstetico){

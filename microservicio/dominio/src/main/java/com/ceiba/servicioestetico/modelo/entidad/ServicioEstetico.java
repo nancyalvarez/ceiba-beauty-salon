@@ -3,11 +3,7 @@ package com.ceiba.servicioestetico.modelo.entidad;
 
 import static com.ceiba.dominio.ValidadorArgumento.*;
 import com.ceiba.servicioestetico.constant.TipoServicio;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class ServicioEstetico {
     //Constants
     private static final String ID_SERVICIO_ESTETICO_REQUERIDO = "Se debe diligenciar el identificador del servicio estético";
@@ -37,5 +33,29 @@ public class ServicioEstetico {
         this.costo = costo;
         this.estadoServicio = estadoServicio;
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getIdServicio() {
+        return idServicio;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getTipoServicio() {
+        return tipoServicio;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public boolean isEstadoServicio() {
+        return estadoServicio;
     }
 }

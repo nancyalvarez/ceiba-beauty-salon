@@ -39,31 +39,6 @@ public class ServicioEsteticoTest {
         BasePrueba.assertThrows(aServicioEstetico().conTipoServicio("TIPO_INVALIDO")::build, ExcepcionValorInvalido.class, TIPO_SERVICIO_ESTETICO_INVALIDO);
     }
 
-    @Test
-    public void validarCreacionModeloServicioEstetico(){
 
-        //Arrange
-        long id = 1L;
-        String idServicio = "TR03";
-        String nombre = "semipermanente";
-        String tipoServicio = "TINTE";
-        int costo = 120000;
-        boolean estadoServicio = true;
-
-        //Act
-        ServicioEstetico servicioEstetico = aServicioEstetico().conIdServicio(idServicio)
-                .conNombre(nombre)
-                .conTipoServicio(tipoServicio)
-                .conCosto(costo)
-                .conEstadoServicio(estadoServicio)
-                .build();
-
-        //Assert
-        boolean esValido= id==servicioEstetico.getId() && idServicio.equals(servicioEstetico.getIdServicio()) && nombre.equals(servicioEstetico.getNombre())
-                && tipoServicio.equals(servicioEstetico.getTipoServicio()) && costo==servicioEstetico.getCosto()
-                && estadoServicio == servicioEstetico.isEstadoServicio();
-        assertTrue(esValido);
-
-    }
 
 }

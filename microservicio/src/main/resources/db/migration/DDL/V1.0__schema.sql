@@ -7,3 +7,12 @@ create table servicio_estetico(
     estado_servicio boolean not null,
     primary key (id)
 );
+
+create table promocion(
+    id int(11) not null auto_increment,
+    id_servicio varchar(12) not null,
+    porcentaje float not null,
+    dia varchar(10),
+    primary key (id),
+    foreign key (id_servicio) references servicio_estetico(id_servicio)
+);
